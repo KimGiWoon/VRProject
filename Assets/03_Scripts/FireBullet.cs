@@ -33,7 +33,7 @@ public class FireBullet : MonoBehaviour
         {
             BulletStorageBox _bullet = _bulletPool.BulletBorrow(_muzzlePoint.position, _muzzlePoint.rotation);
             Rigidbody _bulletRigid = _bullet.GetComponent<Rigidbody>();
-            //Instantiate(_FirePrefab, _muzzlePoint.position, _muzzlePoint.rotation);
+            Instantiate(_FirePrefab, _muzzlePoint.position, _muzzlePoint.rotation);
             _bulletRigid.AddForce(_muzzlePoint.forward * _bulletSpeed, ForceMode.Impulse);
         }
     }

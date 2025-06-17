@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _muzzlePoint: {fileID: 1859533383778320729}
   _bulletPrefab: {fileID: 6152012165266093810, guid: e763ac4c979b6a244a53f9e1e1fbbd6b, type: 3}
-  _FirePrefab: {fileID: 0}
+  _FirePrefab: {fileID: 1336949550903370, guid: 4543ab5e3d405ec40a8d4e9aa5165030, type: 3}
   _bulletPool: {fileID: 8316486008644654352}
   _bulletSpeed: 10
   _Magazine: {fileID: 5331413394325241579}
@@ -615,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5900516536864021941}
-  - component: {fileID: 6821185462355522790}
+  - component: {fileID: 2661789079712614674}
   m_Layer: 0
   m_Name: GrabPoint
   m_TagString: Untagged
@@ -638,8 +638,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5575775244058387541}
   m_LocalEulerAnglesHint: {x: 12.73, y: 0, z: 0}
---- !u!136 &6821185462355522790
-CapsuleCollider:
+--- !u!65 &2661789079712614674
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -656,10 +656,8 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.02
-  m_Height: 0.13
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.12, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6235946537914723998
 GameObject:
