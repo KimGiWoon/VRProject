@@ -7,6 +7,7 @@ public class FireBullet : MonoBehaviour
 {
     [SerializeField] Transform _muzzlePoint;
     [SerializeField] GameObject _bulletPrefab;
+    [SerializeField] BulletObjectPool _bulletPool;
     [SerializeField] int _bulletSpeed;
     [SerializeField] XRSocketInteractor _Magazine;
 
@@ -29,8 +30,9 @@ public class FireBullet : MonoBehaviour
     {
         if(_isReload)
         {
-            GameObject _bullet = Instantiate(_bulletPrefab, _muzzlePoint.position, Quaternion.identity);
-            _bullet.GetComponent<Rigidbody>().AddForce(_muzzlePoint.forward * _bulletSpeed, ForceMode.Impulse);
+            BulletStorageBox _bullet = _bulletPool.BulletBorrow(_muzzlePoint.position, _muzzlePoint.rotation);
+            Rigidbody _bulletRigid = _bullet.GetComponent<Rigidbody>();
+            _bulletRigid.AddForce(_muzzlePoint.forward * _bulletSpeed, ForceMode.Impulse);
         }
     }
 
