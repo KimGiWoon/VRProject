@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6287074101045767468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3470542775349867364}
+  m_Layer: 0
+  m_Name: muzzlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3470542775349867364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6287074101045767468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.046, y: 0.194, z: 0.5398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 159317168153907538}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6507843911529049390
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 1.096
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -216,6 +247,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2308606877605207723}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3470542775349867364}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
       insertIndex: -1
@@ -226,6 +260,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3882819362946144951}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2527317052939222412}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3123195752819231905}
     - targetCorrespondingSourceObject: {fileID: -5486987074316465080, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2269673470455884180}
@@ -338,7 +378,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2527317052939222412}
+        m_TargetAssemblyTypeName: FireBullet, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -445,6 +497,40 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
+--- !u!114 &2527317052939222412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683934381800098792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4781f537a8ffe04398bd357d8aa5010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _muzzlePoint: {fileID: 3470542775349867364}
+  _bulletPrefab: {fileID: 6152012165266093810, guid: e763ac4c979b6a244a53f9e1e1fbbd6b, type: 3}
+  _FirePrefab: {fileID: 0}
+  _bulletPool: {fileID: 3123195752819231905}
+  _bulletSpeed: 10
+  _Magazine: {fileID: 2269673470455884180}
+--- !u!114 &3123195752819231905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683934381800098792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56cc182f05c22945ab26dda46b918ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletStorageBox: []
+  _storageSpace: 10
+  _bulletPrefab: {fileID: -2036668696192215056, guid: e763ac4c979b6a244a53f9e1e1fbbd6b, type: 3}
+  _bulletBox: {fileID: 0}
 --- !u!1 &3920090114141141745 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5486987074316465080, guid: 18b6cd37d98692b4b9e2367037b1f60a, type: 3}
@@ -481,10 +567,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2527317052939222412}
+        m_TargetAssemblyTypeName: FireBullet, Assembly-CSharp
+        m_MethodName: MagerzineLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2527317052939222412}
+        m_TargetAssemblyTypeName: FireBullet, Assembly-CSharp
+        m_MethodName: MagerzineUnLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
